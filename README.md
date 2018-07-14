@@ -28,10 +28,10 @@ and hit enter. Launch a browser.
 and you're good to go.
 
 # TODO
-[x] Basic authentication
-[x] Posts
-[x] Post View
-[ ] Comments Section
-[ ] Profile view
-[ ] CRUD Posts
-[ ] CRUD Comments
+- [x] Basic authentication
+- [x] Posts
+- [x] Post View
+- [ ] Comments Section
+- [ ] Profile view
+- [ ] CRUD Posts
+- [ ] CRUD Comments
