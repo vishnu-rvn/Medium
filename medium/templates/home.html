@@ -39,8 +39,14 @@
 			<hr class="post-elements">
 			<p class="post-elements">{{ post.content }}</p>
 			<button class="comment-button" value="{{ post.id }}">Comments</button>
-			<div id="comment{{ post.id }}" style="display: none">
-				<p>Comments</p>
+			<div id="comment{{ post.id }}" class="flex flex-column" style="display: none">
+				<!-- <div class="comment-box flex flex-row flex-align">
+					<img src="{{ url_for('static', filename='media/profile_pics/default.jpg') }}" alt="">
+					<div>
+						<h3>User</h3>
+						<p>Content</p>
+					</div>
+				</div> -->
 			</div>
 		</article>
 	{% endfor %}

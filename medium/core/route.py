@@ -84,10 +84,15 @@ def comments(post_id):
 	comm = []
 	comments = Comments.query.filter_by(post_id=post_id)
 	for comment in comments:
+		user = User.query.get(comment.user_id)
 		c = {}
 		c['content'] = comment.content
-		c['user_id'] = comment.user_id
+		c['username'] = user.username
 		c['post_id'] = comment.post_id
 		c['date_comment'] = comment.date_commented
 		comm.append(c)
 	return jsonify(comm)
+
+@app.route('/post/<int:post_id>/comment_on', methods=['POST'])
+def comment_on(post_id):
+	pass
