@@ -2,11 +2,11 @@
 A mini blog.
 
 ### Techs Used
-*Python
-*Flask
-*CSS
-*Javascript
-*HTML5
+* Python
+* Flask
+* CSS
+* Javascript
+* HTML5
 
 ##### Have some better ideas? Or got a cool feature to implement? Fork this.
 ##### To run it in your local:
