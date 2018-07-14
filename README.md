@@ -2,11 +2,11 @@
 A mini blog.
 
 ### Techs Used
--Python
--Flask
--CSS
--Javascript
--HTML5
+*Python
+*Flask
+*CSS
+*Javascript
+*HTML5
 
 ##### Have some better ideas? Or got a cool feature to implement? Fork this.
 ##### To run it in your local:
@@ -26,3 +26,12 @@ and hit enter. Launch a browser.
 127.0.0.1:5000
 ```
 and you're good to go.
+
+# TODO
+[x] Basic authentication
+[x] Posts
+[x] Post View
+[ ] Comments Section
+[ ] Profile view
+[ ] CRUD Posts
+[ ] CRUD Comments
