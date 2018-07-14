@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="post-container">
+		<h1 class="post-title">{{ post.title }}</h1>
+		<div class="flex flex-row flex-align-center">
+			<div class="name-date">
+				<img class="post-pic post-pic-size" src="{{ url_for('static', filename='media/profile_pics/default.jpg') }}" alt="">
+				<h4 class="post-elements"><a class="post-author" href="{{ url_for('profile', user_id=post.author.id) }}">{{ post.author }}</a></h4>
+				<h6 class="post-elements"><span>Posted on </span>{{ post.date_posted.strftime('%Y-%m-%d') }}</h6>
+			</div>
+		</div>
+		<p>{{ post.content }}</p>
+	</div>
+{% endblock content %}

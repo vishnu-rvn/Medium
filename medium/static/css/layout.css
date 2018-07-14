@@ -1,0 +1,28 @@
+.container{
+	margin: 0 20%;
+}
+.flex{
+	display: flex;
+}
+.flex-row{
+	flex-direction: row;
+}
+.flex-column{
+	flex-direction: column;
+}
+.flex-center{
+	align-items: center;
+	justify-content: center;
+}
+.flex-align-center{
+	align-items: center;
+}
+.flex-one{
+	flex: 1;
+}
+.flex-two{
+	flex: 2;
+}
+.flex-three{
+	flex: 3;
+}

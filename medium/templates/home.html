@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div>
+		<form class="post-form" action="{{ url_for('home') }}" method="POST">
+			<fieldset class="form-class-fieldset new-post-fieldset">
+				{{ form.hidden_tag() }}
+				<legend>New Post</legend>
+				<div class="form-elements">
+					{{ form.title(class="text-field", placeholder="Post Title") }}
+				</div>
+				<div class="form-elements">
+					{{ form.content(class="text-field", placeholder="Post") }}
+				</div>
+				<div class="form-elements">
+					{{ form.submit(class="button", style="float: left;") }}
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	{% for post in posts %}
+		<article class="post">
+			<div class="flex flex-row flex-align-center">
+				<div>
+					<img class="post-pic post-pic-size" src="{{ url_for('static', filename='media/profile_pics/default.jpg') }}" alt="">
+				</div>
+				<div class="name-date">
+					<h4 class="post-elements"><a class="post-author" href="{{ url_for('profile', user_id=post.author.id) }}">{{ post.author }}</a></h4>
+					<h6 class="post-elements"><span>Posted on </span>{{ post.date_posted.strftime('%Y-%m-%d') }}</h6>
+				</div>
+				{% if post.author == current_user %}
+				<div class="delete-form-container">
+					<form id="delete-form" method="{{ url_for('test_page', post_id=post.id) }}">
+						<input type="submit" value="Delete">
+					</form>
+				</div>
+				{% endif %}
+			</div>
+			<h1 class="post-elements"><a href="{{ url_for('post', post_id=post.id) }}" class="post-author">{{ post.title }}</a></h1>
+			<hr class="post-elements">
+			<p class="post-elements">{{ post.content }}</p>
+			<button class="comment-button" value="{{ post.id }}">Comments</button>
+			<div id="comment{{ post.id }}" style="display: none">
+				<p>Comments</p>
+			</div>
+		</article>
+	{% endfor %}
+{% endblock %}

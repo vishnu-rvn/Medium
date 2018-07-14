@@ -1,0 +1,37 @@
+{% extends 'form_base.html' %}
+{% block form_content %}
+	<div class="container">
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			{% for category, message in messages %}
+				<div>
+					{{ message }}
+				</div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<form method="POST" action="" class="form-class">
+		{{ form.hidden_tag() }}
+		<fieldset class="form-class-fieldset">
+			<legend align="center">Login</legend>
+			<div class="form-elements">
+				{{ form.email(class="text-field text-field-login", placeholder="Email") }}
+			</div>
+			<div class="form-elements">
+				{{ form.password(class="text-field text-field-login", placeholder="Password") }}
+			</div>
+			<div class="form-elements">
+				{{ form.submit(class="button button-login") }}
+			</div>
+			<div class="form-elements">
+				{{ form.remember_me }}
+				{{ form.remember_me.label}}
+			</div>
+			<div class="form-elements">
+				<a href="{{ url_for('register') }}">Register</a>
+				<a style="float: right;" href="">Forgot Password?</a>
+			</div>
+		</fieldset>
+	</form>
+</div>
+{% endblock form_content %}

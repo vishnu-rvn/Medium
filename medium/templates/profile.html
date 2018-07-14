@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="flex flex-row">
+		<div class="flex-one">
+			<div class="profile">
+				<img class="post-pic profile-pic-width" src="{{ url_for('static', filename='media/profile_pics/default.jpg') }}" alt="">
+				<h1>{{ user.name() }}</h1>
+				<h2>{{ user.username }}</h2>
+				<h3>{{ user.email }}</h3>
+				{% if user == current_user %}
+					<button class="button">Update</button>
+				{% endif %}
+			</div>
+		</div>
+		<div class="flex-three">
+			{% if user == current_user %}
+				<h1 style="margin-top: 10px">My Posts</h1>
+			{% else %}
+				<h1 style="margin-top: 10px">Posts by this user</h1>
+			{% endif %}
+			{% for post in posts %}
+				<article class="post">
+					<div class="flex flex-row flex-align-center">
+						{% if post.author == current_user %}
+							<div class="delete-form-container">
+								<form id="delete-form" method="{{ url_for('test_page', post_id=post.id) }}">
+									<input type="submit" value="Delete">
+								</form>
+							</div>
+						{% endif %}
+					</div>
+					<h1 class="post-elements"><a href="{{ url_for('post', post_id=post.id) }}" class="post-author">{{ post.title }}</a></h1>
+					<hr class="post-elements">
+					<p class="post-elements">{{ post.content }}</p>
+				</article>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock content %}

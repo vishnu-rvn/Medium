@@ -1,0 +1,25 @@
+.post-container{
+	/*margin-top: 100px;
+	margin-bottom: 30px;*/
+	background-color: white;
+	padding: 100px 15px 30px 15px;
+}
+.post-title{
+	font-size: 3em;
+}
+.profile{
+	background-color: white;
+	margin-top: 57px;
+	border-radius: 5px;
+	margin-right: 10px;
+	padding-bottom: 10px;
+}
+.profile img{
+	padding: 14px;
+}
+.profile h1, h2, h3{
+	margin-left: 10px;
+}
+#comment.active{
+	display: block;
+}

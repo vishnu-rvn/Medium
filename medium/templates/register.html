@@ -1,0 +1,74 @@
+{% extends 'form_base.html' %}
+{% block form_content %}
+	<div class="container">
+		<form method="POST" action="" class="form-class">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-class-fieldset">
+				<legend align="center">Register</legend>
+				<div class="form-elements">
+					{% if form.username.errors%}
+						{{ form.username(class="text-field text-field-login", placeholder="Username") }}
+						{% for error in form.username.errors %}
+							<span class="error">*{{ error }}</span>
+						{% endfor %}
+					{% else %}
+						{{ form.username(class="text-field text-field-login", placeholder="Username") }}
+					{% endif %}
+				</div>
+				<div class="form-elements">
+					{% if form.email.errors%}
+						{{ form.email(class="text-field text-field-login", placeholder="Email") }}
+						{% for error in form.email.errors %}
+							<span class="error">*{{ error }}</span>
+						{% endfor %}
+					{% else %}
+						{{ form.email(class="text-field text-field-login", placeholder="Email") }}
+					{% endif %}
+				</div>
+				<div class="form-elements">
+					{% if form.first_name.errors%}
+						{{ form.first_name(class="text-field text-field-login", placeholder="First Name") }}
+						{% for error in form.first_name.errors %}
+							<span class="error">*{{ error }}</span>
+						{% endfor %}
+					{% else %}
+						{{ form.first_name(class="text-field text-field-login", placeholder="First Name") }}
+					{% endif %}
+				</div>
+				<div class="form-elements">
+					{% if form.last_name.errors%}
+						{{ form.last_name(class="text-field text-field-login", placeholder="Last Name") }}
+						{% for error in form.last_name.errors %}
+							<span class="error">*{{ error }}</span>
+						{% endfor %}
+					{% else %}
+						{{ form.last_name(class="text-field text-field-login", placeholder="Last Name") }}
+					{% endif %}
+				</div>
+				<div class="form-elements">
+					{% if form.username.errors%}
+						{{ form.password(class="text-field text-field-login", placeholder="Password") }}
+						{% for error in form.password.errors %}
+							<span class="error">*{{ error }}</span>
+						{% endfor %}
+					{% else %}
+						{{ form.password(class="text-field text-field-login", placeholder="Password") }}
+					{% endif %}
+				</div>
+				<div class="form-elements">
+					{% if form.confirm_password.errors %}
+						{{ form.confirm_password(class="text-field text-field-login", placeholder="Confirm Password") }}
+						{% for error in form.confirm_password.errors %}
+							<span class="error">*{{ error }}</span>
+						{% endfor %}
+					{% else %}
+						{{ form.confirm_password(class="text-field text-field-login", placeholder="Confirm Password") }}
+					{% endif %}
+				</div>
+				<div class="form-elements">
+					{{ form.submit(class="button button-login") }}
+				</div>
+			</fieldset>
+		</form>
+	</div>
+{% endblock form_content %}
